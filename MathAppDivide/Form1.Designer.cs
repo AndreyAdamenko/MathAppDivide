@@ -48,8 +48,9 @@
             // 
             this.textBox1.Location = new System.Drawing.Point(12, 70);
             this.textBox1.Name = "textBox1";
+            this.textBox1.ReadOnly = true;
             this.textBox1.Size = new System.Drawing.Size(287, 23);
-            this.textBox1.TabIndex = 0;
+            this.textBox1.TabIndex = 2;
             // 
             // textBox2
             // 
@@ -65,9 +66,10 @@
             this.textBox3.Location = new System.Drawing.Point(12, 99);
             this.textBox3.Multiline = true;
             this.textBox3.Name = "textBox3";
+            this.textBox3.ReadOnly = true;
             this.textBox3.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.textBox3.Size = new System.Drawing.Size(491, 406);
-            this.textBox3.TabIndex = 2;
+            this.textBox3.TabIndex = 3;
             // 
             // button1
             // 
@@ -114,9 +116,9 @@
             this.label4.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label4.Location = new System.Drawing.Point(509, 164);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(120, 25);
+            this.label4.Size = new System.Drawing.Size(121, 25);
             this.label4.TabIndex = 4;
-            this.label4.Text = "Правельных";
+            this.label4.Text = "Правильных";
             // 
             // label5
             // 

@@ -34,6 +34,17 @@ namespace MathAppDivide
             UpdateLabels();
 
             button1.Click += (x, y) =>
+            checkPress();
+
+            textBox2.KeyDown += (x, y) =>
+            {
+                if (y.KeyCode == Keys.Enter)
+                    checkPress();
+            };
+
+            FormClosing += Form1_FormClosing;
+
+            void checkPress()
             {
                 var result = checkResult();
 
@@ -47,17 +58,15 @@ namespace MathAppDivide
                 if (result.isSucces)
                     textBox3.Text = $"{dividend}/{divisor}={result.value}\r\n" + textBox3.Text;
                 else
-                    textBox3.Text = $"{dividend}/{divisor}={result.value} (Не правильно)\r\n" + textBox3.Text;
+                    textBox3.Text = $"{dividend}/{divisor}={result.value} (Не правильно. Ответ: {dividend/divisor})\r\n" + textBox3.Text;
 
                 newSolution();
-            };
-
-            FormClosing += Form1_FormClosing;
+            }
         }
 
         private void Form1_FormClosing(object? sender, FormClosingEventArgs e)
         {
-            var r = MessageBox.Show("Внимание", "Закрыть программу?", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            var r = MessageBox.Show("Закрыть программу?", "Внимание", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 
             if (r != DialogResult.Yes)
                 e.Cancel = true;
@@ -108,7 +117,7 @@ namespace MathAppDivide
 
         void newSolution()
         {
-            var t = GenerateDivisibleNumbers(2 + level, 2);
+            var t = GenerateDivisibleNumbers(2 + level, level);
 
             dividend = t.Item1;
             divisor = t.Item2;
